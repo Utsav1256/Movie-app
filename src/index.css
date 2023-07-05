@@ -1,13 +1,228 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f1f1f1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav {
+  background: #000;
+  /* padding: 15px; */
+  height: 70px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-container input {
+  height: 40px;
+  width: 200px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.search-container {
+  position: relative;
+}
+
+#search-btn {
+  height: 40px;
+  background: #f2711c;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  top: -1px;
+}
+
+/* App component */
+.main {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+}
+.main .tabs {
+  display: flex;
+  font-size: 20px;
+}
+.main .tabs .tab {
+  padding: 10px;
+  background: #fff;
+  margin-right: 13px;
+  border-radius: 3px;
+  border: 1px solid #e1e1e1;
+}
+.main .tabs .tab:hover {
+  cursor: pointer;
+  background: #e1e1e1;
+}
+
+/* MovieCard component */
+.movie-card {
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 1px 3px #d4d4d5, 0 0 1px #f1f1f1;
+}
+.movie-card:not(:first-child) {
+  margin-top: 20px;
+}
+.movie-card:last-child {
+  margin-bottom: 50px;
+}
+.movie-card .left {
+  flex: 1;
+}
+.movie-card .left img {
+  height: 250px;
+}
+.movie-card .right {
+  position: relative;
+  flex: 10;
+}
+.movie-card .title {
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.movie-card .plot {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.footer .rating {
+  font-size: 20px;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.footer button {
+  font-size: 15px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+}
+.favourite-btn {
+  background-color: #2185d0;
+  color: #fff;
+}
+/* Styles for small screens */
+@media (max-width: 600px) {
+  .main {
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .main .tabs {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-card {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .movie-card .left {
+    padding-top: 5px;
+  }
+  .movie-card .left img {
+    height: 200px;
+  }
+
+  .movie-card .right {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .movie-card .title {
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .movie-card .plot {
+    margin-top: 0;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .footer .rating {
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .footer button {
+    margin-top: 10px;
+  }
+}
+
+/* Styles for medium and large screens */
+@media (min-width: 601px) {
+  .main {
+    width: 70%;
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .main .tabs {
+    font-size: 20px;
+  }
+
+  .movie-card {
+    flex-direction: row;
+  }
+
+  .movie-card .left img {
+    height: 250px;
+  }
+
+  .movie-card .right {
+    flex: 10;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .footer .rating {
+    padding-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .footer button {
+    margin-top: 0;
+  }
 }
